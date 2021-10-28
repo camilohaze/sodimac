@@ -1,0 +1,30 @@
+<mat-grid-list cols="3" rowHeight="100px">
+  <mat-grid-tile [colspan]="3">
+    <div class="form-container">
+      <div class="form-control">
+        <mat-form-field appearance="legacy">
+          <mat-label>Name</mat-label>
+          <input matInput
+            placeholder="Name"
+            [(ngModel)]="customerName">
+        </mat-form-field>
+      </div>
+      <div class="actions">
+        <button mat-raised-button
+          color="primary"
+          (click)="onClick_addCustomer()">
+          Add Customer
+        </button>
+      </div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+<div class="list-container">
+  <div class="list">
+    <mat-list role="list">
+      <mat-list-item role="listitem" class="mat-elevation-z2" *ngFor="let customer of customers">
+        {{ customer }}
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
